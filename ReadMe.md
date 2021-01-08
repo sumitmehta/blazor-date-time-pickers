@@ -3,7 +3,7 @@
 **Date and Time Pickers** are fully-functional calendar and clock components for both **Blazor Server** and **Blazor Web Assembly** projects. *Please note: These are two separate components and not a one unified component. But I do plan to make one in the future by combining both of them.*
 
 ## **Date Picker**
-![Date Picker for Blazor](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-date-picker-blue.jpg "Date Picker for Blazor")
+![Date Picker for Blazor](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-date-picker-component-blue.jpg "Date Picker for Blazor")
 
 The Date Picker is a calendar control that allows you to pick a date. The chosen date is stored in a **Nullable DateTime** variable in C#. The basic usage of the control is:
 
@@ -24,21 +24,21 @@ These two parameters specify the initial month and year you want the picker to i
 Usage:
 
 ```html
-<DatePicker @bind-SelectedDate="YourDateProperty" 
-			Month="12" 
-			Year="2001" />
+<DatePicker @bind-SelectedDate="YourDateProperty"
+	    Month="12"
+	    Year="2001" />
 ```
 
 ### **Theme**
 This parameter controls the look and feel of the picker. I have given support for six colored themes out of the box as shown below:
 
-![Date Picker for Blazor in Blue](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-date-picker-blue.jpg "Date Picker for Blazor in Blue") ![Date Picker for Blazor in Black](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-date-picker-black.jpg "Date Picker for Blazor in Black") ![Date Picker for Blazor in Red](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-date-picker-red.jpg "Date Picker for Blazor in Red") ![Date Picker for Blazor in Pink](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-date-picker-pink.jpg "Date Picker for Blazor in Pink") ![Date Picker for Blazor in Green](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-date-picker-green.jpg "Date Picker for Blazor in Green") ![Date Picker for Blazor in Antique White](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-date-picker-antiquewhite.jpg "Date Picker for Blazor in Antique White")
+![Date Picker for Blazor in Blue](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-date-picker-component-blue.jpg "Date Picker for Blazor in Blue") ![Date Picker for Blazor in Black](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-date-picker-component-black.jpg "Date Picker for Blazor in Black") ![Date Picker for Blazor in Red](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-date-picker-component-red.jpg "Date Picker for Blazor in Red") ![Date Picker for Blazor in Pink](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-date-picker-component-pink.jpg "Date Picker for Blazor in Pink") ![Date Picker for Blazor in Green](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-date-picker-component-green.jpg "Date Picker for Blazor in Green") ![Date Picker for Blazor in Antique White](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-date-picker-component-antiquewhite.jpg "Date Picker for Blazor in Antique White")
 
 Usage:
 
 ```html
-<DatePicker @bind-SelectedDate="YourDateProperty" 
-			Theme="SumitMehta.BlazorComponents.Shared.Enums.Themes.Blue" />
+<DatePicker @bind-SelectedDate="YourDateProperty"
+	    Theme="SumitMehta.BlazorComponents.Shared.Enums.Themes.Blue" />
 ```
 
 By default, the theme is set to **Blue**. You can also have your own custom themes. Please check the section **Customizing Themes** below.
@@ -49,8 +49,8 @@ This parameter allows you to specify the width of the picker. By default, no wid
 Usage:
 
 ```html
-<DatePicker @bind-SelectedDate="YourDateProperty" 
-			Width="900" />
+<DatePicker @bind-SelectedDate="YourDateProperty"
+	    Width="900" />
 ```
 
 ### **Culture**
@@ -59,8 +59,8 @@ This parameter is used for globalization. The date picker supports all the cultu
 Usage:
 
 ```html
-<DatePicker @bind-SelectedDate="YourDateProperty" 
-			Culture="fr" /> <!-- French -->
+<DatePicker @bind-SelectedDate="YourDateProperty"
+	    Culture="fr" /> <!-- French -->
 ```
 
 ### **IsVisible**
@@ -69,8 +69,8 @@ This parameter controls the visibility of the picker.
 Usage:
 
 ```html
-<DatePicker @bind-SelectedDate="YourDateProperty" 
-			IsVisible="true" />
+<DatePicker @bind-SelectedDate="YourDateProperty"
+	    IsVisible="true" />
 ```
 
 ### **SelectedDateChanged**
@@ -83,7 +83,7 @@ Usage:
 ```
 
 ## **Time Picker**
-![Time Picker for Blazor](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-time-picker-blue.jpg "Time Picker for Blazor")
+![Time Picker for Blazor](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-time-picker-component-blue.jpg "Time Picker for Blazor")
 
 The Time Picker is an analog clock control that allows you to pick a time by rotating the clock hands for hour, minutes and seconds. The chosen time is stored in a **Nullable TimeSpan** variable in C#. The basic usage of the control is:
 
@@ -117,7 +117,7 @@ Usage:
 ### **Theme**
 This parameter controls the look and feel of the picker. I have given support for six colored themes out of the box as shown below:
 
-![Time Picker for Blazor in Blue](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-time-picker-blue.jpg "Time Picker for Blazor in Blue") ![Time Picker for Blazor in Black](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-time-picker-black.jpg "Time Picker for Blazor in Black") ![Time Picker for Blazor in Red](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-time-picker-red.jpg "Time Picker for Blazor in Red") ![Time Picker for Blazor in Pink](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-time-picker-pink.jpg "Time Picker for Blazor in Pink") ![Time Picker for Blazor in Green](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-time-picker-green.jpg "Time Picker for Blazor in Green") ![Time Picker for Blazor in Antique White](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-time-picker-antiquewhite.jpg "Time Picker for Blazor in Antique White")
+![Time Picker for Blazor in Blue](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-time-picker-component-blue.jpg "Time Picker for Blazor in Blue") ![Time Picker for Blazor in Black](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-time-picker-component-black.jpg "Time Picker for Blazor in Black") ![Time Picker for Blazor in Red](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-time-picker-component-red.jpg "Time Picker for Blazor in Red") ![Time Picker for Blazor in Pink](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-time-picker-component-pink.jpg "Time Picker for Blazor in Pink") ![Time Picker for Blazor in Green](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-time-picker-component-green.jpg "Time Picker for Blazor in Green") ![Time Picker for Blazor in Antique White](https://sumitmehta.net/wp-content/uploads/2021/01/blazor-time-picker-component-antiquewhite.jpg "Time Picker for Blazor in Antique White")
 
 Usage:
 
@@ -215,13 +215,13 @@ While we give you six themes for both the **Date and Time Pickers**, you can alw
 ```
 
 ## Accessing component models from C# code-behind
-You can also access the components from C# code. This is useful and may be needed for some use cases like showing/hiding the pickers on the click of a button. This is demonstrated in the demo projects included in this repository but just to brief, you just need to add `@ref` attrbute on the component and hook it with the corresponding property in your C# code. The type of the property will be the model of the component: 
+You can also access the components from C# code. This is useful and may be needed for some use cases like showing/hiding the pickers on the click of a button. This is demonstrated in the demo projects included in this repository but just to brief, you just need to add `@ref` attrbute on the component and hook it with the corresponding property in your C# code. The type of the property will be the type of the model of the component as mentioned below.
 
-`SumitMehta.BlazorServer.Components.DatePickerBase/SumitMehta.BlazorWebAssembly.Components.DatePickerBase` for **Date Picker**.
+For **Date Picker**: `SumitMehta.BlazorServer.Components.DatePickerBase/SumitMehta.BlazorWebAssembly.Components.DatePickerBase`
 
 and 
 
-`SumitMehta.BlazorServer.Components.TimePickerBase/SumitMehta.BlazorWebAssembly.Components.TimePickerBase` for **Time Picker**.
+For **Time Picker**: `SumitMehta.BlazorServer.Components.TimePickerBase/SumitMehta.BlazorWebAssembly.Components.TimePickerBase`
 
 ## Known Issues
 While the **Date Picker** seems to be working just fine, the **Time Picker** may need some enhancements. The rotation of the clock arms has some lag, especially when used in **Blazor Server** projects. This is quite understandable because **signalR** notifications aren't as quick as the drag operation on the client side is, and frequent re-drawing of that particular part of DOM causes that lag. However, there is also some lag when the component is used in **Blazor WebAssembly** projects. The lag is not as much as it's for **Blazor Server** projects but it still exists. Due to lack of time, I couldn't look into it much but I will have a look in the future if I can hook a native javascript code there and tie it up somehow with the C# code. I am also looking forward to some vital contributions from the other contributors to make this component better for the community.
