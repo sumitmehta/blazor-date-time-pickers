@@ -1,0 +1,258 @@
+﻿.time-picker { /* Main style for the component */
+    width: 300px;
+    height: 300px;
+    border-radius: 30px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    box-sizing: unset;
+    box-shadow: #aaa 0 0 10px;
+    z-index: 1;
+}
+
+    .time-picker .center { /* The center button that enables/disables the time picker for setting the time */
+        background-color: #000;
+        position: absolute;
+        left: calc(50% - 10px);
+        top: calc(50% - 10px);
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        z-index: 20;
+        cursor: pointer;
+    }
+
+    .time-picker .ampm { /* The toggle button for AM/PM modes */
+        position: absolute;
+        left: calc(50% - 20px);
+        top: calc(30% - 10px);
+        width: 40px;
+        z-index: 1;
+        cursor: pointer;
+        text-align: center;
+        color: #fff;
+        background: #000;
+    }
+
+    .time-picker .hand { /* Common style for all clock hands */
+        position: absolute;
+        transform-origin: bottom center;
+        border-radius: 4px;
+    }
+
+    .time-picker .hoursHand, /* Hours hand and its corresponding transparent drag handle */
+    .time-picker .hoursHandTransparent {
+        width: 10px;
+        height: 75px;
+        background-color: #000;
+        top: 75px;
+        left: 145px;
+        z-index: 10;
+        cursor: pointer;
+    }
+
+    .time-picker .hoursHandTransparent { /* Transparent drag handle for hours hand */
+        background-color: transparent !important;
+    }
+
+    .time-picker .minutesHand, /* Minutes hand and its corresponding transparent drag handle */
+    .time-picker .minutesHandTransparent {
+        width: 7px;
+        height: 120px;
+        background-color: #000;
+        top: 30px;
+        left: 147px;
+        z-index: 9;
+        cursor: pointer;
+    }
+
+    .time-picker .minutesHandTransparent { /* Transparent drag handle for minutes hand */
+        background-color: transparent !important;
+    }
+
+    .time-picker .secondsHand, /* Seconds hand and its corresponding transparent drag handle */
+    .time-picker .secondsHandTransparent {
+        width: 5px;
+        height: 120px;
+        top: 30px;
+        left: 149px;
+        z-index: 8;
+        cursor: pointer;
+    }
+
+    .time-picker .secondsHandTransparent { /* Transparent drag handle for seconds hand */
+        background-color: transparent !important;
+    }
+
+    .time-picker ul { /* List for clock numbers drawn around the clock */
+        list-style: none;
+        padding: 0;
+    }
+
+        .time-picker ul li { /* Common style for clock numbers around the clock */
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 10px;
+        }
+
+            .time-picker ul li:nth-child(1) { /* Number 1 */
+                right: 22%;
+                top: 6.5%;
+            }
+
+            .time-picker ul li:nth-child(2) { /* Number 2 */
+                right: 6%;
+                top: 25%;
+            }
+
+            .time-picker ul li:nth-child(3) { /* Number 3 */
+                right: 1%;
+                top: calc(50% - 10px);
+                color: #000 !important;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .time-picker ul li:nth-child(4) { /* Number 4 */
+                right: 6%;
+                top: 69%;
+            }
+
+            .time-picker ul li:nth-child(5) { /* Number 5 */
+                right: 22%;
+                top: 84%;
+            }
+
+            .time-picker ul li:nth-child(6) { /* Number 6 */
+                right: calc(50% - 10px);
+                top: calc(99% - 20px);
+                color: #000 !important;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .time-picker ul li:nth-child(7) { /* Number 7 */
+                left: 22%;
+                top: 84%;
+            }
+
+            .time-picker ul li:nth-child(8) { /* Number 8 */
+                left: 6%;
+                top: 69%;
+            }
+
+            .time-picker ul li:nth-child(9) { /* Number 9 */
+                left: 1%;
+                top: calc(50% - 10px);
+                color: #000 !important;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .time-picker ul li:nth-child(10) { /* Number 10 */
+                left: 6%;
+                top: 25%;
+            }
+
+            .time-picker ul li:nth-child(11) { /* Number 11 */
+                left: 22%;
+                top: 6.5%;
+            }
+
+            .time-picker ul li:nth-child(12) { /* Number 12 */
+                right: calc(50% - 10px);
+                top: 1%;
+                color: #000 !important;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+    /* THEMES */
+
+    /* Black */
+    .time-picker.black { /* Background of the clock */
+        background-color: white;
+        border: 12px solid black;
+    }
+
+        .time-picker.black ul li { /* Common style for clock numbers around the clock */
+            color: gray;
+        }
+
+        .time-picker.black .secondsHand { /* Seconds hand */
+            background-color: gray;
+        }
+
+
+    /* Antique White */
+    .time-picker.antiquewhite { /* Background of the clock */
+        background-color: antiquewhite;
+        border: 12px solid cornsilk;
+    }
+
+        .time-picker.antiquewhite ul li { /* Common style for clock numbers around the clock */
+            color: red;
+        }
+
+        .time-picker.antiquewhite .secondsHand { /* Seconds hand */
+            background-color: rgb(255, 125, 125);
+        }
+
+    /* Green */
+    .time-picker.green { /* Background of the clock */
+        background-color: rgb(219, 249, 201);
+        border: 12px solid #2ECC71;
+    }
+
+        .time-picker.green ul li { /* Common style for clock numbers around the clock */
+            color: red;
+        }
+
+        .time-picker.green .secondsHand { /* Seconds hand */
+            background-color: rgb(255, 125, 125);
+        }
+
+    /* Blue */
+    .time-picker.blue { /* Background of the clock */
+        background-color: #95ddfb;
+        border: 12px solid #2e9dcc;
+    }
+
+        .time-picker.blue ul li { /* Common style for clock numbers around the clock */
+            color: rgb(18, 134, 217);
+        }
+
+        .time-picker.blue .secondsHand { /* Seconds hand */
+            background-color: #ffe9c8;
+        }
+
+    /* Pink */
+    .time-picker.pink { /* Background of the clock */
+        background-color: #ffd7e9;
+        border: 12px solid #cc2e73;
+    }
+
+        .time-picker.pink ul li { /* Common style for clock numbers around the clock */
+            color: #f68bba;
+        }
+
+        .time-picker.pink .secondsHand { /* Seconds hand */
+            background-color: #f68bba;
+        }
+
+    /* Red */
+    .time-picker.red { /* Background of the clock */
+        background-color: #ffdad5;
+        border: 12px solid #cc422e;
+    }
+
+        .time-picker.red ul li { /* Common style for clock numbers around the clock */
+            color: rgb(200, 89, 4);
+        }
+
+        .time-picker.red .secondsHand { /* Seconds hand */
+            background-color: rgb(200, 89, 4);
+        }

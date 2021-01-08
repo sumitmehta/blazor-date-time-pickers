@@ -1,0 +1,269 @@
+﻿.date-picker { /* Main style for the component */
+    color: black;
+    vertical-align: top;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    box-shadow: #aaa 0 0 10px;
+    border-radius: 12px;
+    background-color: white;
+    z-index: 1;
+}
+
+    .date-picker .separator { /* A line that separates the header (having the currently selected date and day, months and day names) and the dates */
+        border-color: #E8E8E8;
+        margin: 0px;
+    }
+
+    .date-picker tr td {
+        padding: 5px; /* Adding some padding to each cell */
+    }
+
+        .date-picker tr td.right { /* The colored right hand side of the picker */
+            border-radius: 0px 20px 20px 0px;
+        }
+
+        .date-picker tr td.left { /* The colored left hand side of the picker */
+            border-radius: 20px 0px 0px 20px;
+        }
+
+    .date-picker .calendar tr td.day { /* Style for day names (displayed in the calendar header) */
+        color: #aaaaaa;
+        font-size: 18px;
+        word-spacing: 35px;
+        font-weight: 600;
+    }
+
+    .date-picker .calendar .selected-date { /* Style for the selected date (displayed in the calendar header on the top left) */
+        font-size: 30px;
+        text-align: left;
+        font-weight: 700;
+    }
+
+    .date-picker .calendar .selected-date-day { /* Style for the selected date's day (displayed in the calendar header on the top left) */
+        font-size: 20px;
+        text-align: left;
+        font-weight: 700;
+        margin-top: -10px;
+    }
+
+    .date-picker .calendar tr { /* Style for each row of the calendar */
+        text-align: center;
+    }
+
+        .date-picker .calendar tr.months { /* Style for month names */
+            color: #aaaaaa;
+            word-spacing: 10px;
+            cursor: pointer;
+        }
+
+        .date-picker .calendar tr td .year-switcher { /* Style for the year switcher (displyed in the calendar header on the top right) */
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+
+            .date-picker .calendar tr td .year-switcher .year { /* The year that's displayed between the two switch (left/right arrow) buttons */
+                color: #E8E8E8;
+                font-size: 30px;
+                font-weight: bold;
+                margin-top: -12px;
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+
+            .date-picker .calendar tr td .year-switcher .left-arrow { /* The left button of the year switcher */
+                width: 0;
+                height: 0;
+                border-top: 10px solid transparent;
+                border-right: 20px solid #E8E8E8;
+                border-bottom: 10px solid transparent;
+                cursor: pointer;
+            }
+
+            .date-picker .calendar tr td .year-switcher .right-arrow { /* The right button of the year switcher */
+                width: 0;
+                height: 0;
+                border-top: 10px solid transparent;
+                border-left: 20px solid #E8E8E8;
+                border-bottom: 10px solid transparent;
+                cursor: pointer;
+            }
+
+        .date-picker .calendar tr td.date { /* Style for each date in the calendar */
+            cursor: pointer;
+            vertical-align: middle;
+        }
+
+            .date-picker .calendar tr td.date.gray { /* Style for the dates not belonging to the current month */
+                color: #AAAAB1;
+            }
+
+            .date-picker .calendar tr td.date.today { /* Style for today's date */
+                background-color: #ffe9c8;
+            }
+
+            .date-picker .calendar tr td.date.selected { /* Style for the selected date */
+                color: #fff;
+            }
+
+            .date-picker .calendar tr td.date:hover { /* Style for the dates when mouse is hovered on them */
+                background-color: #ffc8c8;
+            }
+
+    /* THEMES */
+
+    /* Black */
+    .date-picker.black tr td.right, /* The colored right hand side of the picker */
+    .date-picker.black tr td.left, /* The colored left hand side of the picker */
+    .date-picker.black .calendar tr td.date.selected { /* Style for the selected date */
+        background-color: black;
+    }
+
+    .date-picker.black .calendar tr td.date.selected { /* Style for the selected date */
+        color: white;
+    }
+
+    .date-picker.black .calendar .selected-date-day { /* Style for the selected date's day (displayed in the calendar header on the top left) */
+        color: gray;
+    }
+
+    .date-picker.black .calendar tr td.month.active { /* Style for the selected (active) month */
+        color: black;
+    }
+
+    .date-picker.black .calendar tr td.month:hover { /* Style for months when we hover over each of them */
+        color: gray !important;
+    }
+
+    .date-picker.black .calendar tr td .year-switcher .left-arrow:hover { /* Style for the left button of the year switcher when we hover over it */
+        border-right: 20px solid black;
+    }
+
+    .date-picker.black .calendar tr td .year-switcher .right-arrow:hover { /* Style for the right button of the year switcher when we hover over it */
+        border-left: 20px solid black;
+    }
+
+    /* Antique White */
+    .date-picker.antiquewhite tr td.right, /* The colored right hand side of the picker */
+    .date-picker.antiquewhite tr td.left, /* The colored left hand side of the picker */
+    .date-picker.antiquewhite .calendar tr td.date.selected { /* Style for the selected date */
+        background-color: antiquewhite;
+    }
+
+    .date-picker.antiquewhite .calendar tr td.date.selected { /* Style for the selected date */
+        color: #000;
+    }
+
+    .date-picker.antiquewhite .calendar .selected-date-day, /* Style for the selected date's day (displayed in the calendar header on the top left) */
+    .date-picker.antiquewhite .calendar tr td.month.active { /* Style for the selected (active) month */
+        color: red;
+    }
+
+    .date-picker.antiquewhite .calendar tr td.month:hover { /* Style for months when we hover over each of them */
+        color: antiquewhite !important;
+    }
+
+    .date-picker.antiquewhite .calendar tr td .year-switcher .left-arrow:hover { /* Style for the left button of the year switcher when we hover over it */
+        border-right: 20px solid antiquewhite;
+    }
+
+    .date-picker.antiquewhite .calendar tr td .year-switcher .right-arrow:hover { /* Style for the right button of the year switcher when we hover over it */
+        border-left: 20px solid antiquewhite;
+    }
+
+    /* Green */
+    .date-picker.green tr td.right, /* The colored right hand side of the picker */
+    .date-picker.green tr td.left, /* The colored left hand side of the picker */
+    .date-picker.green .calendar tr td.date.selected { /* Style for the selected date */
+        background-color: #2ECC71;
+    }
+
+    .date-picker.green .calendar .selected-date-day, /* Style for the selected date's day (displayed in the calendar header on the top left) */
+    .date-picker.green .calendar tr td.month.active { /* Style for the selected (active) month */
+        color: #2ECC71;
+    }
+
+    .date-picker.green .calendar tr td.month:hover { /* Style for months when we hover over each of them */
+        color: #27e879 !important;
+    }
+
+    .date-picker.green .calendar tr td .year-switcher .left-arrow:hover { /* Style for the left button of the year switcher when we hover over it */
+        border-right: 20px solid #2ECC71;
+    }
+
+    .date-picker.green .calendar tr td .year-switcher .right-arrow:hover { /* Style for the right button of the year switcher when we hover over it */
+        border-left: 20px solid #2ECC71;
+    }
+
+    /* Blue */
+    .date-picker.blue tr td.right, /* The colored right hand side of the picker */
+    .date-picker.blue tr td.left, /* The colored left hand side of the picker */
+    .date-picker.blue .calendar tr td.date.selected { /* Style for the selected date */
+        background-color: #2e9dcc;
+    }
+
+    .date-picker.blue .calendar .selected-date-day, /* Style for the selected date's day (displayed in the calendar header on the top left) */
+    .date-picker.blue .calendar tr td.month.active { /* Style for the selected (active) month */
+        color: #2e9dcc;
+    }
+
+    .date-picker.blue .calendar tr td.month:hover { /* Style for months when we hover over each of them */
+        color: #2e6ccc !important;
+    }
+
+    .date-picker.blue .calendar tr td .year-switcher .left-arrow:hover { /* Style for the left button of the year switcher when we hover over it */
+        border-right: 20px solid #2e9dcc;
+    }
+
+    .date-picker.blue .calendar tr td .year-switcher .right-arrow:hover { /* Style for the right button of the year switcher when we hover over it */
+        border-left: 20px solid #2e9dcc;
+    }
+
+    /* Pink */
+    .date-picker.pink tr td.right, /* The colored right hand side of the picker */
+    .date-picker.pink tr td.left, /* The colored left hand side of the picker */
+    .date-picker.pink .calendar tr td.date.selected { /* Style for the selected date */
+        background-color: #cc2e73;
+    }
+
+    .date-picker.pink .calendar .selected-date-day, /* Style for the selected date's day (displayed in the calendar header on the top left) */
+    .date-picker.pink .calendar tr td.month.active { /* Style for the selected (active) month */
+        color: #cc2e73;
+    }
+
+    .date-picker.pink .calendar tr td.month:hover { /* Style for months when we hover over each of them */
+        color: #f68bba !important;
+    }
+
+    .date-picker.pink .calendar tr td .year-switcher .left-arrow:hover { /* Style for the left button of the year switcher when we hover over it */
+        border-right: 20px solid #cc2e73;
+    }
+
+    .date-picker.pink .calendar tr td .year-switcher .right-arrow:hover { /* Style for the right button of the year switcher when we hover over it */
+        border-left: 20px solid #cc2e73;
+    }
+
+    /* Red */
+    .date-picker.red tr td.right, /* The colored right hand side of the picker */
+    .date-picker.red tr td.left, /* The colored left hand side of the picker */
+    .date-picker.red .calendar tr td.date.selected { /* Style for the selected date */
+        background-color: #cc422e;
+    }
+
+    .date-picker.red .calendar .selected-date-day, /* Style for the selected date's day (displayed in the calendar header on the top left) */
+    .date-picker.red .calendar tr td.month.active { /* Style for the selected (active) month */
+        color: #cc422e;
+    }
+
+    .date-picker.red .calendar tr td.month:hover { /* Style for months when we hover over each of them */
+        color: #ff806e !important;
+    }
+
+    .date-picker.red .calendar tr td .year-switcher .left-arrow:hover { /* Style for the left button of the year switcher when we hover over it */
+        border-right: 20px solid #cc422e;
+    }
+
+    .date-picker.red .calendar tr td .year-switcher .right-arrow:hover { /* Style for the right button of the year switcher when we hover over it */
+        border-left: 20px solid #cc422e;
+    }

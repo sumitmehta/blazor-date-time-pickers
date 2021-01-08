@@ -1,0 +1,81 @@
+﻿@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.JSInterop
+
+@inherits TimePickerBase
+
+@{
+    //Set visibility of clock hands (show them if they are enabled to set time)
+    var displayStyleForHands = IsEnabled ? "display:block" : "display:none";
+}
+<!-- Main component starts here. 'time-picker' class needs to be there as it provides basic styling. This root node also needs to have a theme class.
+    Also set its reference for code behind so that we can pass it to get bounding client rectangle via javascript.
+    The drag over event is important as it allows the hands to be dragged (rotation in our case) to set the time.-->
+<div class="time-picker @Theme.ToString().ToLower()" @ref="TimePickerRef" @ondragover="(e) => Clock_DragOver(e)" style="@(IsVisible ? "display: block;" : "display: none;")">
+    <!-- This is the actual hours hand -->
+    <div class="hand hoursHand" style="transform: rotate(@(HoursDegrees)deg); @displayStyleForHands">
+    </div>
+    <!-- This is the transparent hours hand on top of the actual hour hand
+        We are having this so that the drag happens on transparent shape so that
+        we don't get to see the ghost image
+        PS: This is a definite scope of improvement as I couldn't find a solution to remove the drag image at the time of writing this component.
+    -->
+    <div class="hand hoursHandTransparent"
+         draggable="true"
+         @ondragstart="HoursHand_DragStart"
+         @ondragend="HoursHand_DragEnd"
+         style="transform: rotate(@(HoursDegrees)deg); @displayStyleForHands">
+    </div>
+    <div class="hand minutesHand"
+         style="transform: rotate(@(MinutesDegrees)deg); @displayStyleForHands">
+    </div>
+    <!-- This is the transparent minute hand on top of the actual minutes hand
+        We are having this so that the drag happens on transparent shape so that
+        we don't get to see the ghost image
+        PS: This is a definite scope of improvement as I couldn't find a solution to remove the drag image at the time of writing this component.
+    -->
+    <div class="hand minutesHandTransparent"
+         draggable="true"
+         @ondragstart="MinutesHand_DragStart"
+         style="transform: rotate(@(MinutesDegrees)deg); @displayStyleForHands">
+    </div>
+    <div class="hand secondsHand"
+         style="transform: rotate(@(SecondsDegrees)deg); @displayStyleForHands">
+    </div>
+    <!-- This is the transparent seconds hand on top of the actual seconds hand
+        We are having this so that the drag happens on transparent shape so that
+        we don't get to see the ghost image
+        PS: This is a definite scope of improvement as I couldn't find a solution to remove the drag image at the time of writing this component.
+    -->
+    <div class="hand secondsHandTransparent"
+         draggable="true"
+         @ondragstart="SecondsHand_DragStart"
+         style="transform: rotate(@(SecondsDegrees)deg); @displayStyleForHands">
+    </div>
+    <!-- Center button - Used to enable/disable picker. This is useful as it allows us to have a NULLABLE TimeSpan which may be handy if the time field is not mandatory in the
+        projects using this component -->
+    <div class="center" @onclick="Toggle_Picker"></div>
+    <!-- /Center button -->
+    <!-- Mode button - Used to toggle between AM/PM -->
+    <div class="ampm" @onclick="Toggle_Mode" style="@displayStyleForHands">
+        <span>@ModeText</span>
+    </div>
+    <!-- /Mode button -->
+    <!-- Clock hours/minutes/seconds -->
+    <ul>
+        <li><span>1</span></li>
+        <li><span>2</span></li>
+        <li><span>3</span></li>
+        <li><span>4</span></li>
+        <li><span>5</span></li>
+        <li><span>6</span></li>
+        <li><span>7</span></li>
+        <li><span>8</span></li>
+        <li><span>9</span></li>
+        <li><span>10</span></li>
+        <li><span>11</span></li>
+        <li><span>12</span></li>
+    </ul>
+    <!-- /Clock hours/minutes/seconds -->
+</div>
+<!-- /Main component ends here -->

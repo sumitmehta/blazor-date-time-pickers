@@ -1,0 +1,94 @@
+﻿@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.JSInterop
+
+@inherits DatePickerBase
+
+<!-- Main component starts here. 'date-picker' class needs to be there as it provides basic styling. This root node also needs to have a theme class. -->
+<table class="date-picker @Theme.ToString().ToLower()" style="@(Width.HasValue ? $"width:{Width}px;" : "") @(IsVisible ? "display: block;" : "display: none;")">
+    <tr>
+        <!-- Outer table left side bar -->
+        <td width="5%" class="left">
+        </td>
+        <!-- /Outer table left side bar -->
+        <!-- Middle cell of the outer table has the calendar and other stuff -->
+        <td width="90%">
+            <!-- Internal table having the calendar and other stuff -->
+            <table width="100%" height="100%" class="calendar">
+                <!-- First row -->
+                <tr>
+                    <!-- Left column - Displays the selected date and day -->
+                    <td colspan="4">
+                        <div class="selected-date">@SelectedDateText</div>
+                        <div class="selected-date-day">@SelectedDateDayText</div>
+                    </td>
+                    <!-- /Left column -->
+                    <!-- Right Column - Displays the currently selected year with buttons to switch it to next/previous year -->
+                    <td colspan="8">
+                        <div class="year-switcher">
+                            <div class="left-arrow" @onclick="() => Year--"></div>
+                            <div class="year">@Year</div>
+                            <div class="right-arrow" @onclick="() => Year++"></div>
+                        </div>
+                    </td>
+                    <!-- /Right column -->
+                </tr>
+                <!-- /First row -->
+                <!-- Second row-->
+                <tr class="months">
+                    <td colspan="12">
+                        <!-- Table to display month names -->
+                        <table width="100%">
+                            <tr>
+                                <!-- Loop through the months and display them. Active month is highlighted and can be changed here as well. -->
+                                @foreach (var m in _months)
+                                {
+                                    <td width="8%" class="month @(m.IsActive ? "active" : "" )" @onclick="() => Change_Month(m)">@m.MonthName</td>
+                                }
+                            </tr>
+                        </table>
+                        <!-- /Table to display month names -->
+                    </td>
+                </tr>
+                <!-- /Second row -->
+                <!-- Third row -->
+                <tr>
+                    <!-- Display day names. They are readonly and can't be changed. -->
+                    @foreach (var day in _days)
+                    {
+                        <td width="14%" class="day">@day.DayName</td>
+                    }
+                </tr>
+                <!-- /Third row -->
+                <!-- Fourth row -->
+                <tr>
+                    <td colspan="12">
+                        <!-- A line that separates the header (having the currently selected date and day, months and day names) and the dates -->
+                        <hr class="separator" />
+                    </td>
+                </tr>
+                <!-- /Fourth row -->
+                <!-- Loop through each week and render each date of the week -->
+                @foreach (var week in Weeks)
+                {
+                    <!-- Week row for each week -->
+                    <tr class="weeks">
+                        @foreach (var dt in week)
+                        {
+                            <!-- Render each date; Color it 'gray' if it doesn't belong to the month; Highlight today's date as well as the selected date -->
+                            <td class="date @(!dt.BelongsToCurrentMonth ? "gray" : "") @(dt.IsToday ? "today" : "") @(dt.IsActive ? "selected" : "")" @onclick="() => Change_Date(dt)">@dt.Text</td>
+                        }
+                    </tr>
+                    <!-- /Week row -->
+                }
+            </table>
+            <!-- /Internal table -->
+        </td>
+        <!-- /Middle cell -->
+        <!-- Outer table right side bar -->
+        <td width="5%" class="right">
+        </td>
+        <!-- /Outer table right side bar -->
+    </tr>
+</table>
+<!-- /Main component ends here -->
