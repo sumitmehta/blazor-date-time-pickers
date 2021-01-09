@@ -141,7 +141,7 @@ Usage:
 	/// <summary>
     /// This is the time field which is used by our time picker via two-way binding
     /// </summary>
-    protected DateTime? YourTimeProperty { get; set; }
+    protected TimeSpan? YourTimeProperty { get; set; }
 
 	/// <summary>
     /// The model for time picker
