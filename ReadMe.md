@@ -13,6 +13,39 @@ Usage:
 <DatePicker @bind-SelectedDate="YourDateProperty" />
 ```
 
+**Please note:** For now, the component has a limitation that it works best only in one case i.e. when you have the component hidden initially and show/hide it via a button (as shown in the screenshots). Therefore, you will need to do the following as well to make it work.
+
+```html
+<DatePicker @ref="DatePicker"
+	    @bind-SelectedDate="YourDateProperty"
+	    IsVisible="false" />
+
+<button class="btn" @onclick="Show_Calendar">Show Calendar</button>
+```
+
+```C#
+@code {
+	/// <summary>
+    /// This is the date field which is used by our date picker via two-way binding
+    /// </summary>
+    protected DateTime? YourDateProperty { get; set; }
+
+	/// <summary>
+    /// The model for date picker
+    /// </summary>
+    protected DatePickerBase DatePicker { get; set; }
+
+	/// <summary>
+    /// Opens/Shows the date picker
+    /// </summary>
+    /// <param name="args">Mouse event arguments</param>
+    protected void Show_Calendar(MouseEventArgs args)
+    {
+        if (DatePicker.IsVisible) DatePicker.Hide();
+        else DatePicker.Show();
+    }
+}
+```
 This component accepts the following parameters:
 
 ### **@bind-SelectedDate**
@@ -91,6 +124,40 @@ Usage:
 
 ```html
 <TimePicker @bind-SelectedTime="YourTimeProperty" IsEnabled="@YourTimeProperty.HasValue" />
+```
+**Please note:** For now, the component has a limitation that it works best only in one case i.e. when you have the component hidden initially and show/hide it via a button (as shown in the screenshots). Therefore, you will need to do the following as well to make it work.
+
+```html
+<TimePicker @ref="TimePicker"
+	    @bind-SelectedTime="YourTimeProperty"
+	    IsEnabled="@YourTimeProperty.HasValue"
+	    IsVisible="false" />
+
+<button class="btn" @onclick="Show_Clock">Show Clock</button>
+```
+
+```C#
+@code {
+	/// <summary>
+    /// This is the time field which is used by our time picker via two-way binding
+    /// </summary>
+    protected DateTime? YourTimeProperty { get; set; }
+
+	/// <summary>
+    /// The model for time picker
+    /// </summary>
+    protected TimePickerBase TimePicker { get; set; }
+
+	/// <summary>
+    /// Opens/Shows the time picker
+    /// </summary>
+    /// <param name="args">Mouse event arguments</param>
+    protected void Show_Clock(MouseEventArgs args)
+    {
+        if (TimePicker.IsVisible) TimePicker.Hide();
+        else TimePicker.Show();
+    }
+}
 ```
 
 This component accepts the following parameters:
