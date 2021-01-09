@@ -1,43 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Project Sdk="Microsoft.NET.Sdk.Razor">
-
-  <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-    <ReleaseVersion>1.0</ReleaseVersion>
-    <Description>Date and Time Pickers for Blazor Server Projects</Description>
-    <PackageVersion>1.0</PackageVersion>
-    <Authors>Sumit Mehta</Authors>
-    <Copyright>@SumitMehta.NET</Copyright>
-    <Owners>Sumit Mehta</Owners>
-    <PackageReleaseNotes>This is the initial release of Date and Time Pickers for 'Blazor Server' projects.</PackageReleaseNotes>
-    <Title>Date and Time Pickers for Blazor Server Projects</Title>
-    <PackageIconUrl>https://sumitmehta.net/wp-content/uploads/2021/01/blazor-date-time-picker-components.png</PackageIconUrl>
-    <PackageLicenseUrl>https://github.com/sumitmehta/blazor-date-time-pickers/blob/main/LICENSEhttps://sumitmehta.net/license.html</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/sumitmehta/blazor-date-time-pickers</PackageProjectUrl>
-    <Summary>This package gives you fully-functional 'Date and Time Pickers' for 'Blazor Server' projects. Please note that these are two separate components and not a one unified component.</Summary>
-    <PackageTags>C#, .NET Core, Date Picker, Time Picker, Calendar, Clock, ASP.NET, MVC, Web API, SignalR</PackageTags>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <FrameworkReference Include="Microsoft.AspNetCore.App" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <Folder Include="wwwroot\" />
-    <Folder Include="Base\" />
-  </ItemGroup>
-    
-  <ItemGroup>
-    <None Remove="DatePickerComponent\DatePicker.razor.css" />
-    <None Remove="TimePickerComponent\TimePicker.razor.css" />
-    <None Remove="DatePicker.razor.css" />
-    <None Remove="TimePicker.razor.css" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DatePicker.razor.css" />
-    <Content Include="TimePicker.razor.css" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\SumitMehta.BlazorComponents.Shared\SumitMehta.BlazorComponents.Shared.csproj" />
-  </ItemGroup>
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <ReleaseVersion>1.0</ReleaseVersion>
+        <Description>Date and Time Pickers for Blazor Server Projects</Description>
+        <PackageVersion>1.0</PackageVersion>
+        <Authors>Sumit Mehta</Authors>
+        <Copyright>@SumitMehta.NET</Copyright>
+        <Owners>Sumit Mehta</Owners>
+        <PackageReleaseNotes>This is the initial release of Date and Time Pickers for 'Blazor Server' projects.</PackageReleaseNotes>
+        <Title>Date and Time Pickers for Blazor Server Projects</Title>
+        <PackageProjectUrl>https://github.com/sumitmehta/blazor-date-time-pickers</PackageProjectUrl>
+        <Summary>This package gives you fully-functional 'Date and Time Pickers' for 'Blazor Server' projects. Please note that these are two separate components and not a one unified component.</Summary>
+        <PackageTags>C#, .NET Core, Date Picker, Time Picker, Calendar, Clock, ASP.NET, MVC, Web API, SignalR</PackageTags>
+    </PropertyGroup>
+    <PropertyGroup>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    </PropertyGroup>
+    <PropertyGroup>
+        <PackageIcon>icon.png</PackageIcon>
+    </PropertyGroup>
+    <ItemGroup>
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="icon.png" Pack="true" PackagePath="icon.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\SumitMehta.BlazorComponents.Shared\SumitMehta.BlazorComponents.Shared.csproj" />
+    </ItemGroup>
 </Project>

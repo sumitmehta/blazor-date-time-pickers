@@ -1,16 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-    <ReleaseVersion>1.0</ReleaseVersion>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="DatePickerComponent\" />
-    <Folder Include="DatePickerComponent\Models\" />
-    <Folder Include="TimePickerComponent\" />
-    <Folder Include="TimePickerComponent\Models\" />
-    <Folder Include="Enums\" />
-    <Folder Include="Base\" />
-  </ItemGroup>
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <ReleaseVersion>1.0</ReleaseVersion>
+        <Description>This is the shared library for 'Blazor Components' developed by Sumit Mehta. All components starting with the company name 'SumitMehta' will need this package.</Description>
+        <PackageVersion>1.0</PackageVersion>
+        <Authors>Sumit Mehta</Authors>
+        <Copyright>@SumitMehta.NET</Copyright>
+        <Owners>Sumit Mehta</Owners>
+        <PackageReleaseNotes>This is the initial release of the library.</PackageReleaseNotes>
+        <Title>Shared Library for 'Blazor Components' Developed by Sumit Mehta</Title>
+        <PackageProjectUrl>https://github.com/sumitmehta/blazor-date-time-pickers</PackageProjectUrl>
+        <Summary>This is the shared library for 'Blazor Components' developed by Sumit Mehta. All components starting with the company name 'SumitMehta' will need this package.</Summary>
+        <PackageTags>C#, .NET Core, Date Picker, Time Picker, Calendar, Clock, ASP.NET, MVC, Web API, SignalR</PackageTags>
+    </PropertyGroup>
+    <PropertyGroup>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    </PropertyGroup>
+    <PropertyGroup>
+        <PackageIcon>icon.png</PackageIcon>
+    </PropertyGroup>
+    <ItemGroup>
+        <None Include="icon.png" Pack="true" PackagePath="icon.png" />
+    </ItemGroup>
+    
 </Project>
